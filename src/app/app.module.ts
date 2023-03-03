@@ -4,6 +4,11 @@ import { LayoutModule } from './presentation/layout/layout.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { StoreModule } from '@ngrx/store';
+import { appEffects, appReducer } from './domain/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -12,7 +17,11 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LayoutModule
+    LayoutModule,
+    CoreModule,
+    StoreModule.forRoot(appReducer),
+    EffectsModule.forRoot(appEffects),
+    StoreDevtoolsModule.instrument({ maxAge: 25 })
   ],
   providers: [],
   bootstrap: [AppComponent]
