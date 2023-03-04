@@ -6,6 +6,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { BaseLoggedComponent } from './base-logged/base-logged.component';
 import { BaseAuthComponent } from './base-auth/base-auth.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -19,7 +20,8 @@ import { BaseAuthComponent } from './base-auth/base-auth.component';
     BaseAuthComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class LayoutModule { }
