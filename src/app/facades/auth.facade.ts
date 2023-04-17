@@ -5,13 +5,14 @@ import {
   loginAction,
   loginErrorAction,
 } from '../domain/store/auth/auth.actions';
-import { AuthState } from '../domain/store/auth/auth.state';
+//import { AuthState } from '../domain/store/auth/auth.state';
 import * as authSelectors from '../domain/store/auth/auth.selectors';
 import { ILogin } from '../core/models/auth.model';
 import { RootState } from '../domain/store';
 
 @Injectable({ providedIn: 'root' })
 export class AuthFacade {
+  
   isLoading$: Observable<boolean>;
   isError$: Observable<string | null>;
 

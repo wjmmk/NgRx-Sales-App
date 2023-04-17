@@ -8,8 +8,10 @@ import { getKpisAction } from '../domain/store/home/home.actions';
 
 @Injectable({ providedIn: 'root' })
 export class HomeFacade {
+
   isLoadingKpis$: Observable<boolean | null>;
   kpis$: Observable<IKpi[] | null>;
+  
   constructor(
     private readonly _store: Store<RootState>,
     private _storee: Store
