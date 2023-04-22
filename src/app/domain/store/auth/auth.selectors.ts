@@ -3,7 +3,6 @@ import { RootState } from "..";
 import { AuthState } from "./auth.state";
 
 export interface AppState {
-    //feature: AuthState,
     feature: RootState,
 }
 

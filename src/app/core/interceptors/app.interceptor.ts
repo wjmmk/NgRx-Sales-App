@@ -13,7 +13,7 @@ const API_URL = environment.api_url;
 
 @Injectable()
 export class AppInterceptorService implements HttpInterceptor {
-  constructor() {}
+  constructor() { }
 
   intercept(
     req: HttpRequest<any>,

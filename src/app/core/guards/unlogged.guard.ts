@@ -13,11 +13,11 @@ export class UnloggedGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
       const token = localStorage.getItem('sales.token')
-      if(!token){
+      if(!token) { // *** PENDIENTE Video: 1:22:22 hora ***
         // TODO: Get User
         return true;
       }
-      this._router.navigateByUrl('auth/login')
+      this._router.navigateByUrl('home')
       return false
   }
   
