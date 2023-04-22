@@ -24,6 +24,7 @@ export class AuthEffects {
             return authActions.loginSuccessAction();
           }),
           catchError((error) =>
+          //Como el error no es un Obervable, lo envolvemos en un operador of()
             of(
               authActions.loginErrorAction({
                 message: 'Usuario o password incorrecto',

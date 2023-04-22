@@ -19,14 +19,14 @@ export class LoginComponent implements OnInit {
     private _fb: FormBuilder,
     private _authFacade: AuthFacade
   ) { 
+    this.loginForm = this._initForm()
+
+    // Aqui se integra la Facade con la Vista.
     this.loadingLogin$ = this._authFacade.isLoading$
     this.loginError$ = this._authFacade.isError$
-    this.loginForm = this._initForm()
   }
 
-  ngOnInit(): void {
-    this._initForm()
-  }
+  ngOnInit(): void {}
 
 
   onSubmitForm(): void {
@@ -36,7 +36,6 @@ export class LoginComponent implements OnInit {
     }
 
     const data: ILogin = {...this.loginForm.value}
-    //console.log(data)
     this._authFacade.login(data)
   }
 
